@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 
-class Test:
-    def __init__(self, name):
-        self.name = name
-    def __repr__(self):
-        return 'Test:{}'.format(self.name)
+def countlines(name):
+    with open(name) as file:
+        count = 0
+        for line in file:
+            count += 1
+            print(line)
+        print('Lines:', count)
 
-t = Test('python')
-print(t)
-print(t.name)
+if __name__ == '__main__':
+    filename = input("Enter the file name: ")
+    countlines(filename)
